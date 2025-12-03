@@ -1,0 +1,109 @@
+/* ===== HEADERS ===== */
+h1, h2, h3 {
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  margin-bottom: 20px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== REPORT CARD CONTAINERS ===== */
+.form, .list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  padding: 20px;
+  
+  /* Gradient border card style */
+  background: white;
+  border-radius: 14px;
+  border: 3px solid transparent;
+  background-image: 
+    linear-gradient(white, white),
+    linear-gradient(90deg, #4facfe, #00f2fe);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+  margin-bottom: 22px;
+
+  transition: 0.25s ease-in-out;
+}
+
+/* Hover effect on report cards */
+.list:hover, .form:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.12);
+}
+
+/* ===== INPUT STYLING ===== */
+input {
+  padding: 12px 14px;
+  border-radius: 10px;
+  width: 240px;
+  
+  border: 2px solid #dfe9f3;
+  background: linear-gradient(to right, #f9fbff, #f2f7ff);
+  transition: 0.3s ease;
+  font-size: 14px;
+}
+
+input:hover {
+  background: linear-gradient(to right, #f5faff, #eaf3ff);
+}
+
+input:focus {
+  border-color: #4facfe;
+  background: linear-gradient(to right, #e3f2fd, #e1f5fe);
+  box-shadow: 0 0 6px #4facfe;
+  outline: none;
+}
+
+/* ===== BUTTONS ===== */
+button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  color: white;
+  font-size: 14px;
+
+  box-shadow: 0 3px 10px rgba(79, 172, 254, 0.4);
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(79, 172, 254, 0.5);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* ===== DELETE BUTTON (RED GRADIENT) ===== */
+button.delete-btn {
+  background: linear-gradient(90deg, #ff5858, #fb2d2d);
+  box-shadow: 0 3px 10px rgba(255, 77, 77, 0.4);
+}
+
+button.delete-btn:hover {
+  box-shadow: 0 6px 16px rgba(255, 77, 77, 0.5);
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 600px) {
+  input {
+    width: 100%;
+  }
+
+  .form, .list {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

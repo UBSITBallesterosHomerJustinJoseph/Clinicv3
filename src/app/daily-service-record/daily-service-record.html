@@ -1,0 +1,31 @@
+<!-- DAILY SERVICE RECORDS -->
+<h2 class="section-title">Daily Service Records</h2>
+
+<div class="gradient-card form">
+  <input placeholder="Date" type="date" [value]="date()" (input)="date.set($any($event.target).value)">
+  <input placeholder="Patient Name" [value]="patientName()" (input)="patientName.set($any($event.target).value)">
+  <input placeholder="Age" type="number" [value]="age()" (input)="age.set($any($event.target).valueAsNumber)">
+  <input placeholder="Gender" [value]="gender()" (input)="gender.set($any($event.target).value)">
+  <input placeholder="Diagnosed Sickness" [value]="sicknessDiagnosed()" (input)="sicknessDiagnosed.set($any($event.target).value)">
+  <input placeholder="Treatment Provided" [value]="treatmentProvided()" (input)="treatmentProvided.set($any($event.target).value)">
+  <input placeholder="Attending Physician" [value]="attendingPhysician()" (input)="attendingPhysician.set($any($event.target).value)">
+  
+  <button class="primary-btn" (click)="addRecord()">Add Record</button>
+</div>
+
+<hr>
+
+<h3 class="sub-title">Existing Records</h3>
+
+<div class="gradient-card list" *ngFor="let rec of records">
+  <input type="date" [(ngModel)]="rec.date">
+  <input [(ngModel)]="rec.patientName">
+  <input type="number" [(ngModel)]="rec.age">
+  <input [(ngModel)]="rec.gender">
+  <input [(ngModel)]="rec.sicknessDiagnosed">
+  <input [(ngModel)]="rec.treatmentProvided">
+  <input [(ngModel)]="rec.attendingPhysician">
+
+  <button class="primary-btn" (click)="updateRecord(rec)">Update</button>
+  <button class="delete-btn" (click)="deleteRecord(rec.id)">Delete</button>
+</div>

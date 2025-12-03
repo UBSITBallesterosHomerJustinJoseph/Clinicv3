@@ -1,0 +1,25 @@
+/* ===== Navbar (Ominous Theme) ===== */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 15px 0;
+  background: #1f1b24; /* Dark, ominous shade */
+  border-bottom: 2px solid #bb86fc; /* Accent */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #e0e0e0;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  background: #bb86fc;
+  color: #121212;
+  transform: translateY(-2px);
+}

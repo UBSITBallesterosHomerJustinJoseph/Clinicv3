@@ -1,0 +1,31 @@
+<!-- RABIES BITE CASE REPORTS -->
+<h2 class="section-title">Rabies Bite Case Reports</h2>
+
+<div class="gradient-card form">
+  <input type="date" [value]="date()" (input)="date.set($any($event.target).value)">
+  <input placeholder="Patient Name" [value]="patientName()" (input)="patientName.set($any($event.target).value)">
+  <input type="number" placeholder="Age" [value]="age()" (input)="age.set($any($event.target).valueAsNumber)">
+  <input placeholder="Gender" [value]="gender()" (input)="gender.set($any($event.target).value)">
+  <input placeholder="Animal Type" [value]="animalType()" (input)="animalType.set($any($event.target).value)">
+  <input placeholder="Rabies Status" [value]="rabiesStatus()" (input)="rabiesStatus.set($any($event.target).value)">
+  <input placeholder="Treatment Given" [value]="treatmentGiven()" (input)="treatmentGiven.set($any($event.target).value)">
+  
+  <button class="primary-btn" (click)="addCase()">Add Case</button>
+</div>
+
+<hr>
+
+<h3 class="sub-title">Existing Cases</h3>
+
+<div class="gradient-card list" *ngFor="let rec of cases">
+  <input type="date" [(ngModel)]="rec.date">
+  <input [(ngModel)]="rec.patientName">
+  <input type="number" [(ngModel)]="rec.age">
+  <input [(ngModel)]="rec.gender">
+  <input [(ngModel)]="rec.animalType">
+  <input [(ngModel)]="rec.rabiesStatus">
+  <input [(ngModel)]="rec.treatmentGiven">
+
+  <button class="primary-btn" (click)="updateCase(rec)">Update</button>
+  <button class="delete-btn" (click)="deleteCase(rec.id)">Delete</button>
+</div>

@@ -1,0 +1,57 @@
+<div class="container" style="text-align:center; margin-top:20px;">
+
+  <h1>Water Analysis Records</h1>
+
+  <!-- Input Form -->
+  <div class="form">
+    <input type="date"
+      [value]="date()"
+      (input)="date.set($any($event.target).value)"
+    >
+
+    <input type="text"
+      placeholder="Source Address"
+      [value]="sourceAddress()"
+      (input)="sourceAddress.set($any($event.target).value)"
+    >
+
+    <input type="text"
+      placeholder="Water Status"
+      [value]="waterStatus()"
+      (input)="waterStatus.set($any($event.target).value)"
+    >
+
+    <input type="text"
+      placeholder="Remarks"
+      [value]="remarks()"
+      (input)="remarks.set($any($event.target).value)"
+    >
+
+    <button (click)="addResult()">Add Result</button>
+  </div>
+
+  <hr>
+
+  <!-- Records List -->
+  <div *ngFor="let rec of results" class="list">
+
+    <input type="date" [value]="rec.date"
+      (input)="rec.date = $any($event.target).value">
+
+    <input type="text" [value]="rec.sourceAddress"
+      (input)="rec.sourceAddress = $any($event.target).value">
+
+    <input type="text" [value]="rec.waterStatus"
+      (input)="rec.waterStatus = $any($event.target).value">
+
+    <input type="text" [value]="rec.remarks"
+      (input)="rec.remarks = $any($event.target).value">
+
+    <button (click)="updateResult(rec.id, rec.date, rec.sourceAddress, rec.waterStatus, rec.remarks)">
+      Update
+    </button>
+
+    <button class="delete" (click)="deleteResult(rec.id)">Delete</button>
+
+  </div>
+</div>
