@@ -2,7 +2,7 @@
 
   <h1>Water Analysis Records</h1>
 
-  <!-- Input Form -->
+
   <div class="form">
     <input type="date"
       [value]="date()"
@@ -31,8 +31,7 @@
   </div>
 
   <hr>
-
-  <!-- Records List -->
+    <h3 class="sub-title">Records</h3>
   <div *ngFor="let rec of results" class="list">
 
     <input type="date" [value]="rec.date"
